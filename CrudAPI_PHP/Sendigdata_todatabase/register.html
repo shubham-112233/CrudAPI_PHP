@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      .register {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border: none;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register">
+      <form class="test">
+        <input type="text" name="" placeholder="Enter a name"  /><br />
+        <input
+          type="number"
+          name=""
+          placeholder="Enter your Mob"
+          required
+        /><br />
+        <button type="button" onclick="getOTP()">Send</button><br>
+        
+        <input
+          type="number"
+          name=""
+          placeholder="Enter your OTP"
+        /><br />
+        <input
+          type="password"
+          name=""
+          placeholder="Enter Your Password"
+        /><br />
+        <input type="password">
+        <a href="login.html"> <button type="submit">Submit</button></a>
+      </form>
+      <a href="home.html"><button>Back</button></a>
+    </div>
+  </body>
+  <script>
+    function getOTP(){
+      let number = '0123456789';
+      let otp = '';
+      for(let i = 0; i < 4; i++){
+        otp += number[Math.floor(Math.random() * 10)];
+      }
+      console.log("Generated OTP: ", otp);
+      alert("Your OTP is: " + otp);
+    }
+  </script>
+</html>
